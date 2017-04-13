@@ -1,0 +1,17 @@
+<!-- Unless otherwise specified, values/attributes are free-form strings -->
+    <!-- type is currently either BSP or SourceOnly -->
+<sourcePackage type="BSP" id="bsp-freescale-mx6q-sabresmart-SDP6.6">
+    <title>QNX Neutrino 6.6 BSP for the Freescale i.MX6Q Sabre Platform for Smart Devices</title>
+    <release>latest</release>
+    <maturity>Development Build</maturity>
+    <license>QDL and Apache II</license>
+    <startup>startup-imx6x-sabresmart</startup> 
+    <description> This package contains the source and build files for targeting QNX/Neutrino on Freescale i.MX6 Sabre Platform for Smart Devices.</description>
+    <vendor>QNX Software Systems</vendor>
+    <qnxTargetVersion>SDP6.6</qnxTargetVersion>
+   	<qnxTargetCPU variant="armle.v7">ARM</qnxTargetCPU>
+    <!-- type is currently only import, will be extended in the future. -->
+    <bsp type="import">
+    	<import id="bsp-freescale-mx6q-sabresmart">src/hardware/startup/boards/imx6x/smart-device/build</import>
+    </bsp>
+</sourcePackage>

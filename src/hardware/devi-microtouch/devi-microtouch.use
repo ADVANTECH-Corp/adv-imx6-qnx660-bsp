@@ -1,0 +1,13 @@
+%C [general_opts] protocol* [protocol_opts]* device* [device_opts]*
+
+%C : microtouch touchscreen Input Manager
+
+
+General options:
+ -v increment verbosity  (default 0)
+
+protocol modules and their options:
+
+filter modules and their options:
+
+  -c               Calibrate mode - don't transform coordinates

@@ -1,0 +1,23 @@
+%C Driver for i.MX6SABRELITE USB peripheral controller. 
+
+Featuring descriptors for a mass storage device. 
+
+Syntax:
+    io-usb-dcd -dusbumass-mx6sabrelite-ci [options]
+
+Options:
+    ioport=<addr>   register base address
+    irq=<num>       interrupt request number
+    fullspeed       force controller into full speed
+    verbose=<int>   set verbosity level to <int>.
+    ser=<string>    override serial string descriptor
+    linkup          Assert "SOFT CONNECT".  Enables the target to be detected
+                    as soon as the device controller driver is loaded
+    linkdown        De-assert "SOFT-CONNECT".  The link must be manually 
+                    enabled once the entire USB subsystem is ready. (default) 
+    phy=<addr>      USB PHY address
+    vbus_enable     Do not disable VBUS output
+
+Examples: 
+
+    io-usb-dcd -vvvv -dusbumass-mx6sabrelite-ci ioport=0x53ff4000,irq=37

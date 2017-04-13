@@ -1,0 +1,13 @@
+This program reads a touch device for touches and releases
+and displays the data.
+
+The touch device should be created by a devi-(touch) resource manager,
+for example
+
+    devi-hid -p touch
+    
+A devi-* resource manager with -p option, simply outputs a _touch2_packet
+to its device. 
+
+This output is normally received directly by libmtouch-devi.so when
+graphics.conf contains "driver = devi" in the mtouch section.

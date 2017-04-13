@@ -1,0 +1,45 @@
+This program reads the data passed from a usb touchscreen 
+(tested with lilliput) via
+   
+   devi-hid -p -R800,480 touch
+
+devi-hid (-p) writes the touchpoints to
+
+   /dev/devi/touch0
+   
+as a _touch2_packet.
+
+-----------------------------------
+
+Driver libmtouch-devi.so reads from /dev/devi/touch0 [DEFAULT]
+when configured "driver = devi".
+
+  The format of the data read is
+
+     struct _touch2_packet
+
+  POINTER_BUTTON_3 (0x4) is present for a click and absent for a release
+
+  The x,y data is UNCALIBRATED.
+
+-----------------------------------
+For usb/hid lilliput...
+
+  Run...
+  devi-hid -p -R800,480 touch
+
+  graphics.conf
+    begin mtouch
+      driver =  devi
+      options = vid=0x1391,did=0x2112,max_touchpoints=5,width=800,height=480,waitfor_hidserver=1
+
+-----------------------------------
+For non-hid use...
+
+  Run...
+  devi-xxxx -p ...?
+
+  graphics.conf
+    begin mtouch
+      driver = devi
+      options = height=480,width=800,poll=1000

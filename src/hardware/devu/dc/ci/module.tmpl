@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<module name="devu-usbumass-mpc512x.so">
+	<type>Element</type>
+	<classification>Driver</classification>
+	
+	<description>
+		<short>USB Mass Storage Peripheral Controller Driver for mpc5121e USB OTG controller</short>
+			<abstract>
+				<![CDATA[The devu-usbumass-mpc512x.so shared objects provide support for the mpc5121e integrated USB peripheral contoller. The shared objects are used by the USB stack (io-usb-dcd).]]>
+			</abstract>
+	</description>
+
+	<supports>
+		<availability>
+			<cpu isa="ppc">
+				<byteOrder>be</byteOrder>
+			</cpu>
+		</availability>
+	</supports>
+
+	<source available="false">
+		<location type="">.</location>
+	</source>
+	
+	<GroupOwner>hw</GroupOwner>
+	<RuntimeComponent>Neutrino RTOS</RuntimeComponent>
+
+
+	<contents>
+		<component id="mpc512x" generated="true">
+			<location basedir="{cpu}/dll{.:endian}" runtime="true">devu-usbumass-mpc512x.so</location>
+		</component>
+	</contents>
+
+</module>
